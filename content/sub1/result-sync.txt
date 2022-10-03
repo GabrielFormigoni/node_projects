@@ -1,0 +1,3 @@
+O resultado da concatenação é:
+Esse é o primeiro texto!!!
+Esse é o segundo texto!!!
