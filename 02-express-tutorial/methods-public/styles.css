@@ -4,6 +4,7 @@
 ::before {
   box-sizing: border-box;
 }
+
 :root {
   /* COLORS  */
   /* primary */
@@ -175,8 +176,7 @@ hr {
   border-top: var(--line);
 }
 
-button,
-.btn {
+button, .btn {
   cursor: pointer;
   appearance: none;
   color: var(--white);
@@ -189,6 +189,7 @@ button,
   transition: var(--transition);
   text-transform: capitalize;
 }
+
 button:hover,
 .btn:hover {
   color: var(--white);
@@ -200,7 +201,7 @@ button.small {
   font-size: var(--smallText);
 }
 
-button.block {
+.block {
   width: 100%;
 }
 
