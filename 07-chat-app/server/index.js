@@ -14,6 +14,12 @@ app.use(router);
 io.on("connection", (socket) => {
   console.log("New user connected!!!");
 
-  io.on("disconnection", () => console.log("User left!!!"));
+  socket.on("join", ({ name, room }) => {
+    console.log(name, room);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("User left!!!");
+  });
 });
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

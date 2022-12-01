@@ -9,8 +9,8 @@ const App = () => {
   return (
     <BrowserRouter>
        <Routes>
-        <Route path="/" exact element={<Join/>}/>
-        <Route path="/chat" exact element={<Chat/>}/>
+        <Route path="/" exact element={<Join />}/>
+        <Route path="/chat" exact element={<Chat />}/>
       </Routes>
     </BrowserRouter>
   );
