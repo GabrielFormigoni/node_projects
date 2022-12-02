@@ -3,6 +3,8 @@ import io from "socket.io-client";
 import { useSearchParams } from 'react-router-dom';
 
 import InfoBar from "../InfoBar/InfoBar"
+import Messages from "../Messages/Messages"
+import Input from "../Input/Input";
 import './Chat.css';
 
 let socket;
@@ -55,21 +57,13 @@ const Chat = () => {
       socket.emit('sendMessage', message, () => setMessage(''));
     }
   }
-
-  console.log(message, messages)
-
+  console.log(message, messages);
   return (
     <div className="outerContainer">
       <div className="container">
         <InfoBar room={room}/>
-      <input
-        className="input"
-        type="text"
-        placeholder="Type a message..."
-        value={message}
-        onChange={({ target: { value } }) => setMessage(value)}
-        onKeyPress={(event) => event.key === 'Enter' ? sendMessage(event) : null}
-    />
+        <Messages messages={messages} name={name}/>
+        <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
       </div>
     </div>
   );

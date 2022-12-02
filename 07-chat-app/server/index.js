@@ -6,7 +6,13 @@ const router = require("./router");
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
+const {
+  users,
+  addUser,
+  removeUser,
+  getUser,
+  getUsersInRoom,
+} = require("./users");
 
 const PORT = process.env.PORT || 5000;
 
@@ -14,6 +20,7 @@ app.use(router);
 
 io.on("connect", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
+    console.log(`User ${name} entered`);
     const { error, user } = addUser({ id: socket.id, name, room });
 
     if (error) return callback(error);
@@ -41,7 +48,7 @@ io.on("connect", (socket) => {
   });
 
   socket.on("disconnect", () => {
-    console.log("User left!!!");
+    console.log("User has left!!!");
   });
 });
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
