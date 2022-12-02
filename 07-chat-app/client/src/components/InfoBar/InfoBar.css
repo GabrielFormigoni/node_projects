@@ -1,0 +1,25 @@
+.infoBar{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2979FF;
+    border-radius: 4px 4px 0 0;
+    padding: 0 3%;
+}
+
+.leftInnerContainer{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.onlineIcon{
+    margin-right: 10px;
+}
+
+.rightInnerContainer{
+    display: flex;
+    align-items: center;
+}
