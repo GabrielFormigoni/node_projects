@@ -10,8 +10,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 60%;
-    width: 35%;
+    height: 80%;
+    width: 45%;
     background: #FFFFFF;
     border-radius: 10px;
 }
